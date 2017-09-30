@@ -1,12 +1,20 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "portfolio-gatsby",
+  "description": "Personal portfolio created with Gatsby",
+  "version": "0.1.0",
+  "author": "Nathan Schott <nschott3@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.9.36",
-    "gatsby-link": "^1.6.15",
-    "gatsby-plugin-react-helmet": "^1.0.5"
+    "font-awesome": "^4.7.0",
+    "gatsby": "^1.9.49",
+    "gatsby-link": "^1.6.17",
+    "gatsby-plugin-react-helmet": "^1.0.5",
+    "gatsby-plugin-sass": "^1.0.12",
+    "gatsby-plugin-sharp": "^1.6.8",
+    "gatsby-source-filesystem": "^1.5.1",
+    "gatsby-transformer-remark": "^1.7.15",
+    "gatsby-transformer-sharp": "^1.6.6",
+    "normalize.css": "^7.0.0",
+    "prop-types": "^15.6.0"
   },
   "keywords": [
     "gatsby"
@@ -20,6 +28,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.6.1"
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.4.0",
+    "prettier": "^1.7.2"
   }
 }

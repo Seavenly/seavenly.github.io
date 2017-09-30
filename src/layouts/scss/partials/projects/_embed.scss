@@ -1,0 +1,30 @@
+div.embed {
+  text-align: center;
+
+  .embed-wrapper {
+    display: inline-block;
+  }
+
+  h3 {
+    background: #eee;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ccc;
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 0.2rem 0.2rem 0 0;
+    letter-spacing: 0.2em;
+  }
+
+  .iframe-wrapper {
+    margin: auto;
+    padding-top: 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0 0 0.2rem 0.2rem;
+  }
+
+  iframe {
+    border: none;
+  }
+}

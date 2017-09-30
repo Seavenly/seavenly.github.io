@@ -1,0 +1,126 @@
+nav ul {
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+
+div.top-bar {
+    background: color(primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+
+    div.wrapper {
+        display: flex;
+        justify-content: space-between;
+    }    
+    div.logo {
+        display: flex;
+        align-items: center;
+        a {
+            display: block;
+            text-decoration: none;
+            font-family: font(heading);
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+            padding: 0 1rem;
+            &:hover {
+                color: #999;
+            }
+        }
+    }
+}
+
+nav.main-nav {
+    ul {
+        @include visuallyhidden;
+    }
+    button.mobile-menu {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: transparent;
+        color: white;
+        font-size: 1rem;
+        font-weight: 300;
+        text-transform: lowercase;
+        font-family: font(main);
+        line-height: 1.15rem;
+        padding: 1rem 1rem 0.5rem;
+    }
+}
+nav.mobile-nav {
+    position: fixed;
+    right: -14rem;
+    top: 0;
+    bottom: 0;
+    width: 14rem;
+    padding: 0;
+    transition: right 0.5s;
+    background: white;
+    z-index: 2;
+    padding: 2.6rem 1rem 0;
+    text-align: right;
+    border-left: 1px solid #ddd;
+    &.open {
+        right: 0;
+    }
+    a {
+        text-decoration: none;
+        color: color(dark);
+        text-transform: lowercase;
+        display: block;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 0.5rem;
+    }
+}
+@media screen and (min-width: 37.5rem) {
+    nav.mobile-nav { display: none; }
+    nav.main-nav {
+        button.mobile-menu {
+            display: none;
+        }
+        ul {
+            @include visuallyhidden(false);
+            display: block;
+        }
+        li {
+            display: inline-block;
+            a {
+                color: white;
+                text-decoration: none;
+                text-transform: lowercase;
+                display: block;
+                padding: 1rem 1rem 0.5rem;
+                font-weight: 300;
+                transition: background 0.3s;
+                position: relative;
+                &:hover {
+                    background: #555;
+                    &:after {
+                        transition: all 0.3s;
+                        margin-left: 0;
+                        width: 100%;
+                    }
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    margin-left: 50%;
+                    height: 0.1rem;
+                    background: white;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

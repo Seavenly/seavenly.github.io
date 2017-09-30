@@ -1,0 +1,183 @@
+section.project {
+    div.displays {
+        @media (max-width: 37.499rem) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 4rem;
+            div.desktop, div.tablet, div.mobile {
+                position: relative;
+                margin-bottom: 0.5rem;
+                border: 1px solid #eee;
+                margin-top: 1.6rem;
+
+                &:before {
+                    display: block;
+                    background: #444;
+                    top: -1.6rem;
+                    left: 0;
+                    right: 0;
+                    padding: 0.3rem 0.6rem;
+                    color: white;
+                    position: absolute;
+                    z-index: 1;
+                    font-size: 0.9rem;
+                    text-align: center;
+                    border-radius: 0.2rem 0.2rem 0 0;
+                }
+                div.screen {
+                    overflow: hidden;
+                    &:before {
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        padding-bottom: 56.25%;
+                    }
+                    div.site {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: -1px;
+                        background: white;
+                        overflow: hidden;
+                        img { display: block; }
+                    }       
+                }
+            }
+            div.desktop {
+                flex: 1 1 100%;
+                &:before {
+                    content: 'Desktop';
+                }
+            }
+            div.tablet, div.mobile {
+                flex: 0 1 48%;
+                div.screen:before {
+                    padding-bottom: 137.55%;
+                }
+            }
+            div.tablet:before { content: 'Tablet'; }
+            div.mobile:before { content: 'Mobile'; }
+        }
+        @media (min-width: 37.5rem) {
+            position: relative;
+            max-width: 50rem;
+            margin: 0 auto 14rem;
+            div.desktop {
+                border: 1rem solid color(dark);
+                border-radius: 1rem;
+                position: relative;
+                margin-right: auto;
+                width: 90%;
+
+                div.screen {
+                    overflow: hidden;
+                    &:before {
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        padding-bottom: 56.25%;
+                    }                 
+                }
+
+                div.site {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: -1px;
+                    background: white;
+                    overflow: hidden;
+                    img { display: block; }
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    bottom: -11%;
+                    width: 10%;
+                    margin-left: -5%;
+                    background: color(dark);
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 110%;
+                    left: 30%;
+                    bottom: -13%;
+                    width: 40%;
+                    background: color(dark);
+                    border-radius: 0.3rem 0.3rem 0 0;
+                }
+            }
+
+            div.tablet, div.mobile {
+                border: 1rem solid color(dark);
+                border-radius: 1rem;
+                width: 40%;
+                position: absolute;
+                margin: auto;
+                bottom: -15%;
+                right: 0;
+
+                div.screen {
+                    overflow: hidden;
+                    background: white;
+                    &:before {
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        padding-bottom: 137.55%;
+                    }                 
+                }
+
+                div.site {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: -1px;
+                    overflow: hidden;
+                    img { display: block; }
+                }
+            }
+
+            div.mobile {
+                right: 30%;
+                bottom: -22%;
+                width: 16%;
+                border: 0.5rem solid color(dark);
+                border-radius: 0.5rem;
+                border-bottom-width: 2rem;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    bottom: -1.4rem;
+                    left: 35%;
+                    width: 30%;
+                    height: 0.8rem;
+                    background: #777;
+                    border-radius: 0.2rem;
+                }
+
+                div.screen {
+                    position: relative;
+                    &:before {
+                        padding-bottom: 156.25%;
+                    }
+                }
+
+                // div.site {
+                //     right: -18px;
+                // }
+            }
+        }
+    }
+}

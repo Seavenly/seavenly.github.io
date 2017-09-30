@@ -1,0 +1,7 @@
+navigation:
+  links:
+    services: /#services
+    portfolio: /#portfolio
+    tools: /#tools
+    about: /#about
+    contact: /#contact

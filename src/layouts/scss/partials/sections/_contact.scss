@@ -1,0 +1,112 @@
+section.contact {
+    div.contact-form {
+        max-width: 32rem;
+        padding: 1rem;
+        margin: 1rem auto 0;
+        background: #f5f5f5;
+        border-radius: 0.2rem;
+        position: relative;
+
+        input,
+        textarea {
+            border-radius: 0.2rem;
+            padding: 0.5rem;
+            width: 100%;
+            border: none;
+            border-top: 1px solid #ddd;
+            font-family: font(main);
+            font-size: 0.9rem;
+            &:focus {
+                outline: 1px solid color(dark);
+                outline-offset: -1px;
+            }
+        }
+        input[type=text],
+        input[type=email] {
+            padding-left: 2rem;
+        }
+        textarea {
+            height: 6rem;
+        }
+        label {
+            position: absolute;
+            z-index: -10;
+            left: -9999px;
+        }
+
+        div.form-field {
+            position: relative;
+            margin-top: 0.5rem;
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 2rem;
+                font-family: FontAwesome;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &.name:before { content: '\f2c0'; }
+            &.email:before { content: '\f003'; }
+        }
+
+        div.buttons {
+            text-align: right;
+            button {
+                border: none;
+                padding: 0.5rem 1rem;
+                background: color(primary);
+                color: white;
+                text-transform: lowercase;
+                font-size: 0.9rem;
+                font-weight: 400;
+                display: inline-block;
+                border-radius: 0.2rem;
+                border: 1px solid color(primary);
+                margin-top: 0.5rem;
+                &:hover {
+                    cursor: pointer;
+                    background: #555;
+                    border-color: #555;
+                }
+            }
+            button[type=reset] {
+                color: color(primary);
+                background: white;
+                &:hover {
+                    background: white;
+                    color: #999;
+                    border-color: #999;
+                }
+            }
+        }
+    }
+
+    div#form-result {
+        opacity: 0;
+        position: absolute;
+        bottom: -4rem;
+        left: 0;
+        right: 0;
+        transition: all 1s;
+        padding: 0.5rem 0.5rem;
+        background: #2d2d2d;
+        color: white;
+        text-align: center;
+        border-radius: 0.2rem;
+        
+        &.open {
+            opacity: 1;
+            bottom: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 37.5rem) {
+  div.contact-form {
+    width: 50%;
+  }
+}
