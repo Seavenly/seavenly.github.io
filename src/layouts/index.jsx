@@ -8,22 +8,22 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import { title, metadata } from '../data/config/site.yaml';
+import icon from '../data/images/logo.png';
 import theme from './theme';
 import fonts from './fonts';
 
 const TemplateWrapper = ({ children, data }) => (
   <ThemeProvider theme={theme}>
     <div className="top">
-      <Helmet
-        title={title}
-        meta={[
-          { charset: 'utf-8' },
-          { name: 'description', content: metadata.description },
-          { name: 'keywords', content: metadata.keywords },
-          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-          { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' },
-        ]}
-      />
+      <Helmet>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" type="image/png" href={icon} />
+      </Helmet>
       <Header hero={data.file} />
       <Body>
         <Wrapper>{children()}</Wrapper>
