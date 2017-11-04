@@ -78,6 +78,7 @@ const Tool = styled.a`
 `;
 const Title = styled.h4`
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0;
+  color: #777;
 `;

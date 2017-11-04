@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 
 import { title, metadata } from '../data/config/site.yaml';
 import theme from './theme';
+import fonts from './fonts';
 
 const TemplateWrapper = ({ children, data }) => (
   <ThemeProvider theme={theme}>
@@ -63,6 +64,7 @@ const Wrapper = styled.div`
 
 /* eslint no-unused-expressions: ["error", { "allowTaggedTemplates": true }] */
 injectGlobal`
+  ${fonts}
   body {
     font-family: ${theme.fonts.main};
     color: ${theme.colors.dark};
@@ -88,8 +90,8 @@ injectGlobal`
     padding-bottom: 0.5rem;
     margin-bottom: 3rem;
     text-transform: lowercase;
-    font-weight: 500;
-    font-size: 1.3rem;
+    font-weight: 400;
+    font-size: 1.6rem;
     border-bottom: 1px solid #eee;
     @media (min-width: 60rem) {
       margin-top: 8rem;

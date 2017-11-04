@@ -9,7 +9,7 @@ export default {
   fonts: {
     main: '"Roboto", sans-serif',
     heading: '"Iosevka", sans-serif',
-    serif: '"Source Serif Pro", serif',
+    serif: 'serif',
   },
   snippets: {
     wrapper: css`
