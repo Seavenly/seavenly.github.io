@@ -30,15 +30,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
-      result.data.allMarkdownRemark.edges.map(({ node }) =>
+      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: `/projects/${node.fields.slug}`,
           component: path.resolve('./src/templates/project.jsx'),
           context: {
             slug: node.fields.slug,
           },
-        }),
-      );
+        });
+      });
       resolve();
     });
   });
