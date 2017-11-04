@@ -4,8 +4,10 @@ import styled, { keyframes } from 'styled-components';
 
 import SVG from '../partials/SVG';
 
-// Make email harder for bots to scrub
-const ge = (name, domain) => `${name}@${domain}`.replace(/:/g, '');
+const encode = data =>
+  Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
 
 class Contact extends React.Component {
   constructor(props) {
@@ -15,8 +17,6 @@ class Contact extends React.Component {
       name: '',
       email: '',
       message: '',
-      gotcha: '',
-      formResult: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClear = this.handleClear.bind(this);
@@ -38,21 +38,23 @@ class Contact extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.gotcha.length === 0 && !this.state.formResult) {
+    if (!this.state['bot-field'] && !this.state.formResult) {
       this.setState(() => ({
         showFormResult: true,
         formResult: <SVG icon="loading" />,
       }));
       axios({
         method: 'post',
-        url: `https://formspree.io/${ge('con:ta:ct', 'nath:ans:chot:t.c:om')}`,
-        responseType: 'json',
-        data: {
+        url: '/',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        data: encode({
+          'form-name': 'contact',
           name: this.state.name,
           email: this.state.email,
           message: this.state.message,
-          _subject: `[Contact] ${this.state.name}`,
-        },
+        }),
       })
         .then(() => {
           this.setState(() => ({
@@ -87,7 +89,19 @@ class Contact extends React.Component {
   render() {
     return (
       <Wrapper>
-        <form className="form" onSubmit={this.handleSubmit}>
+        <form
+          name="contact"
+          className="form"
+          onSubmit={this.handleSubmit}
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input
+            name="bot-field"
+            value={this.state['bot-field']}
+            onChange={this.handleInputChange}
+            style={{ display: 'none' }}
+          />
           <FormField>
             <label htmlFor="name">
               <LabelText>Name</LabelText>
@@ -139,13 +153,6 @@ class Contact extends React.Component {
             </Button>
             <Button type="submit">Submit</Button>
           </Buttons>
-          <input
-            type="text"
-            name="gotcha"
-            value={this.state.gotcha}
-            onChange={this.handleInputChange}
-            style={{ display: 'none' }}
-          />
         </form>
         <Result isOpen={this.state.showFormResult}>{this.state.formResult}</Result>
       </Wrapper>
