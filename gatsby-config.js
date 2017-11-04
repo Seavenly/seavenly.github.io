@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Nathan Schott\'s Portfolio',
+    title: "Nathan Schott's Portfolio",
   },
   plugins: [
+    'gatsby-plugin-react-next',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    'gatsby-plugin-netlify',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',

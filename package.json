@@ -4,17 +4,24 @@
   "version": "0.1.0",
   "author": "Nathan Schott <nschott3@gmail.com>",
   "dependencies": {
-    "font-awesome": "^4.7.0",
-    "gatsby": "^1.9.49",
-    "gatsby-link": "^1.6.17",
-    "gatsby-plugin-react-helmet": "^1.0.5",
-    "gatsby-plugin-sass": "^1.0.12",
-    "gatsby-plugin-sharp": "^1.6.8",
-    "gatsby-source-filesystem": "^1.5.1",
-    "gatsby-transformer-remark": "^1.7.15",
-    "gatsby-transformer-sharp": "^1.6.6",
+    "axios": "^0.17.0",
+    "emotion": "^8.0.9",
+    "emotion-server": "^8.0.9",
+    "emotion-theming": "^8.0.9",
+    "gatsby": "^1.9.74",
+    "gatsby-image": "^1.0.19",
+    "gatsby-link": "^1.6.22",
+    "gatsby-plugin-emotion": "^1.1.8",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-react-next": "^1.0.4",
+    "gatsby-plugin-sharp": "^1.6.9",
+    "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-remark": "^1.7.17",
+    "gatsby-transformer-sharp": "^1.6.10",
     "normalize.css": "^7.0.0",
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.0",
+    "react-emotion": "^8.0.9",
+    "react-headroom": "^2.2.2"
   },
   "keywords": [
     "gatsby"
@@ -29,11 +36,15 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.0.1",
-    "eslint": "^4.7.2",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.4.0",
-    "prettier": "^1.7.2"
+    "gatsby-plugin-netlify": "^1.0.6",
+    "gatsby-plugin-styled-components": "^1.0.5",
+    "prettier": "^1.7.4"
   }
 }

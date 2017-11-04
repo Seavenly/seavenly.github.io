@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Services from '../components/modular/Services';
-import Tools from '../components/modular/Tools';
+import Modular from '../components/Modular';
 
 const IndexPage = ({ data }) => (
-  <div className="page--home">
+  <div className="page page--home">
     {data.allMarkdownRemark.edges.map(({ node }) => {
-      switch (node.frontmatter.menu) {
-        case 'services':
-          return <Services node={node} />;
-        case 'tools':
-          return <Tools node={node} />;
-        default:
-          return null;
-      }
+      const type = node.fileAbsolutePath
+        .split('/')
+        .slice(-1)[0]
+        .slice(0, -3);
+      return (
+        <Modular
+          key={node.id}
+          type={type}
+          node={node}
+          data={type === 'portfolio' ? data.projects : null}
+        />
+      );
     })}
   </div>
 );
@@ -28,25 +31,27 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const query = graphql`
-query ModularQuery {
-  allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/home/" } }) {
-    edges {
-      node {
-        html
-        frontmatter {
-          title
-          menu
-          thumb {
-            name
-            childImageSharp {
-              responsiveResolution(width: 150, height: 150) {
-                src
-                srcSet
+  query ModularQuery {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/pages/home/" } }
+      sort: { fields: [fileAbsolutePath] }
+    ) {
+      edges {
+        node {
+          id
+          html
+          fileAbsolutePath
+          frontmatter {
+            title
+            menu
+            thumb {
+              name
+              childImageSharp {
+                resolutions(width: 150, height: 150) {
+                  ...GatsbyImageSharpResolutions
+                }
               }
             }
-          }
-          modular {
-            projects
             services {
               title
               icon
@@ -58,11 +63,19 @@ query ModularQuery {
             tools {
               name
               link
+              logo {
+                name
+                childImageSharp {
+                  sizes(maxWidth: 100) {
+                    ...GatsbyImageSharpSizes
+                  }
+                }
+              }
             }
           }
         }
       }
     }
+    ...projects
   }
-}
 `;

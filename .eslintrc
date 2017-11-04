@@ -1,12 +1,17 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
-  ],
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["react", "jsx-a11y", "import", "prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  },
   "settings": {
-    "import/core-modules": ["react", "config", "react-helmet", "react-router", "graphql"]
+    "import/core-modules": ["react", "react-helmet", "react-router", "styled-components"]
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "graphql": true
   }
 }

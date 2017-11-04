@@ -1,7 +1,17 @@
+title: Nathan Schott's Portfolio'
+
+social:
+  github: https://github.com/Seavenly
+  linkedin: https://www.linkedin.com/in/nathan-schott-a96037147/
+
+metadata:
+  keywords: portfolio
+  description: >-
+    Nathan Schott's portfolio website displaying various projects.
+
 navigation:
-  links:
-    services: /#services
-    portfolio: /#portfolio
-    tools: /#tools
-    about: /#about
-    contact: /#contact
+  services: /#services
+  portfolio: /#portfolio
+  tools: /#tools
+  about: /#about
+  contact: /#contact
