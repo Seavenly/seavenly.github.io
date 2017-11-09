@@ -28,7 +28,7 @@ Tools.propTypes = {
 export default Tools;
 
 const Wrapper = styled.div`
-  background: #f5f5f5;
+  background: #fafafa;
   border-top: 1px solid #eee;
   margin-top: 4rem;
   border-radius: 0.2rem;

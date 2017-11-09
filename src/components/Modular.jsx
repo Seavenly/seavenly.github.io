@@ -7,7 +7,7 @@ import Services from './modular/Services';
 import Portfolio from './modular/Portfolio';
 import Tools from './modular/Tools';
 import Contact from './modular/Contact';
-import { Markdown } from './partials/StyledComponents';
+import { Markdown, SectionTitle } from './partials/StyledComponents';
 
 const Modular = ({ type, node, data }) => (
   <Wrapper>
@@ -58,7 +58,7 @@ Modular.defaultProps = {
 
 export default Modular;
 
-const Title = styled.h2`
+const Title = SectionTitle.extend`
   margin-top: 14rem;
   padding-left: 2rem;
 `;

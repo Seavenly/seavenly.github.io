@@ -6,29 +6,27 @@ import Displays from '../components/partials/Displays';
 import Embed from '../components/partials/Embed';
 import Features from '../components/partials/Features';
 
+import { SectionTitle } from '../components/partials/StyledComponents';
+
 const ProjectPage = ({ data }) => {
   const { markdownRemark: node } = data;
   const { frontmatter } = node;
   const { project } = frontmatter;
 
   return (
-    <div className="page page--project">
-      <div className={`project project--${node.fields.slug}`}>
-        <h2 className="project__title">{frontmatter.title}</h2>
-        <div className="project__content">
-          <InfoRows frontmatter={frontmatter} />
-          <div className="md" dangerouslySetInnerHTML={{ __html: node.html }} />
-          {(() => {
-            const optionalBlocks = [];
-            if (project.displays)
-              optionalBlocks.push(<Displays key="displays" frontmatter={frontmatter} />);
-            if (project.embed) optionalBlocks.push(<Embed key="embed" frontmatter={frontmatter} />);
-            if (project.features)
-              optionalBlocks.push(<Features key="features" frontmatter={frontmatter} />);
-            return optionalBlocks;
-          })()}
-        </div>
-      </div>
+    <div>
+      <SectionTitle>{frontmatter.title}</SectionTitle>
+      <InfoRows frontmatter={frontmatter} />
+      <div className="md" dangerouslySetInnerHTML={{ __html: node.html }} />
+      {(() => {
+        const optionalBlocks = [];
+        if (project.displays)
+          optionalBlocks.push(<Displays key="displays" frontmatter={frontmatter} />);
+        if (project.embed) optionalBlocks.push(<Embed key="embed" frontmatter={frontmatter} />);
+        if (project.features)
+          optionalBlocks.push(<Features key="features" frontmatter={frontmatter} />);
+        return optionalBlocks;
+      })()}
     </div>
   );
 };
@@ -64,22 +62,37 @@ export const query = graphql`
           displays {
             mobile {
               childImageSharp {
-                sizes(maxWidth: 300, maxHeight: 480, cropFocus: NORTH) {
-                  ...GatsbyImageSharpSizes
+                sizes(
+                  maxWidth: 300
+                  maxHeight: 480
+                  cropFocus: NORTH
+                  traceSVG: { color: "#0397a7" }
+                ) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
                 }
               }
             }
             tablet {
               childImageSharp {
-                sizes(maxWidth: 300, maxHeight: 480, cropFocus: NORTH) {
-                  ...GatsbyImageSharpSizes
+                sizes(
+                  maxWidth: 300
+                  maxHeight: 480
+                  cropFocus: NORTH
+                  traceSVG: { color: "#0397a7" }
+                ) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
                 }
               }
             }
             desktop {
               childImageSharp {
-                sizes(maxWidth: 800, maxHeight: 500, cropFocus: NORTH) {
-                  ...GatsbyImageSharpSizes
+                sizes(
+                  maxWidth: 800
+                  maxHeight: 500
+                  cropFocus: NORTH
+                  traceSVG: { color: "#0397a7" }
+                ) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
                 }
               }
             }
@@ -89,8 +102,8 @@ export const query = graphql`
             description
             image {
               childImageSharp {
-                sizes(maxWidth: 700) {
-                  ...GatsbyImageSharpSizes
+                sizes(maxWidth: 700, traceSVG: { color: "#0397a7" }) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
                 }
               }
             }

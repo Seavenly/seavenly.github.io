@@ -80,6 +80,6 @@ const HomeLink = styled(Link)`
   transition: color 0.3s;
   padding: 0 1rem;
   &:hover {
-    color: #999;
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;

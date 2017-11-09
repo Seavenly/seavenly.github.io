@@ -48,8 +48,8 @@ export const query = graphql`
             title
             thumb {
               childImageSharp {
-                sizes(maxWidth: 250) {
-                  ...GatsbyImageSharpSizes
+                sizes(maxWidth: 250, traceSVG: { color: "#0397a7" }) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
                 }
               }
             }
@@ -94,7 +94,7 @@ const TitleWrapper = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   opacity: 0;
   transition: opacity 0.5s;
 `;

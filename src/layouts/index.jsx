@@ -47,8 +47,8 @@ export const query = graphql`
     file(relativePath: { eq: "images/hero.jpg" }) {
       name
       childImageSharp {
-        sizes(maxWidth: 1920) {
-          ...GatsbyImageSharpSizes
+        sizes(maxWidth: 1920, traceSVG: { threshold: 25, color: "#0397a7" }) {
+          ...GatsbyImageSharpSizes_withWebp_tracedSVG
         }
       }
     }
@@ -83,18 +83,5 @@ injectGlobal`
   }
   li {
     list-style: none;  
-  }
-  h2 {
-    font-family: ${theme.fonts.heading};  
-    margin-top: 4rem;
-    padding-bottom: 0.5rem;
-    margin-bottom: 3rem;
-    text-transform: lowercase;
-    font-weight: 400;
-    font-size: 1.6rem;
-    border-bottom: 1px solid #eee;
-    @media (min-width: 60rem) {
-      margin-top: 8rem;
-    }
-  }
+  }    
 `;

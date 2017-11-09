@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 export default {
   colors: {
     primary: '#2d2d2d',
-    secondary: '#ffffff',
+    secondary: '#0397a7',
     dark: '#2d2d2d',
   },
   fonts: {

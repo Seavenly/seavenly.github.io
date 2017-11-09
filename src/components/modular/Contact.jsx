@@ -195,7 +195,7 @@ const Result = styled.div.attrs({
   left: 0;
   right: 0;
   padding: 0.5rem 0.5rem;
-  background: #2d2d2d;
+  background: ${({ theme }) => theme.colors.secondary};
   color: white;
   text-align: center;
   border-radius: 0.2rem;
@@ -237,9 +237,9 @@ const FormControl = styled.input`
   outline: 1px solid transparent;
   outline-offset: -1px;
   &:focus {
-    outline-color: ${({ theme }) => theme.colors.primary};
+    outline-color: ${({ theme }) => theme.colors.secondary};
     & ~ ${SvgWrapper} svg {
-      fill: ${({ theme }) => theme.colors.primary};
+      fill: ${({ theme }) => theme.colors.secondary};
     }
   }
   &[type='text'],

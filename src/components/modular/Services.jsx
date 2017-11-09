@@ -66,7 +66,19 @@ const Service = styled.div`
 `;
 const Top = styled.div`
   position: relative;
-  background: linear-gradient(135deg, #3a3a3a 50%, #2d2d2d 50%);
+  background: #2d2d2d;
+  overflow: hidden;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -160%;
+    left: -50%;
+    width: 100%;
+    padding-top: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+  }
 `;
 const SvgWrapper = styled.div`
   padding: 1rem 0.5rem;
@@ -76,7 +88,7 @@ const SvgWrapper = styled.div`
 `;
 const TitleWrapper = styled.div`
   padding: 0.3rem 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: ${({ theme }) => theme.colors.secondary};
 `;
 const Title = styled.h4`
   max-width: 8rem;

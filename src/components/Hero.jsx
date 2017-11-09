@@ -86,9 +86,6 @@ const Title = styled.h1`
   margin: 0;
   text-transform: uppercase;
   @media screen and (min-width: 25rem) {
-    font-size: 2.2rem;
-  }
-  @media screen and (min-width: 37.5rem) {
     font-size: 3rem;
   }
 `;
@@ -96,7 +93,26 @@ const Slogan = styled.p`
   text-align: center;
   margin: 0;
   text-transform: lowercase;
+  background: ${({ theme }) => theme.colors.secondary};
+  display: inline-block;
+  position: relative;
+  z-index: -1;
+  transform: translateY(-0.7rem) skewX(-15deg);
+  padding: 0.3rem 1rem;
+
   @media screen and (min-width: 25rem) {
     letter-spacing: 0.15rem;
+    transform: translateY(-1rem) skewX(-15deg);
+    padding: 0.5rem 1rem;
+  }
+  &::after {
+    content: '';
+    display: block;
+    background: ${({ theme }) => theme.colors.secondary};
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1rem;
+    width: 0.5rem;
   }
 `;

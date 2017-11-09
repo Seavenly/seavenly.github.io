@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Modular from '../components/Modular';
 
 const IndexPage = ({ data }) => (
-  <div className="page page--home">
+  <div>
     {data.allMarkdownRemark.edges.map(({ node }) => {
       const type = node.fileAbsolutePath
         .split('/')
@@ -47,8 +47,8 @@ export const query = graphql`
             thumb {
               name
               childImageSharp {
-                resolutions(width: 150, height: 150) {
-                  ...GatsbyImageSharpResolutions
+                resolutions(width: 150, height: 150, traceSVG: { color: "#0397a7" }) {
+                  ...GatsbyImageSharpResolutions_withWebp_tracedSVG
                 }
               }
             }
@@ -66,8 +66,8 @@ export const query = graphql`
               logo {
                 name
                 childImageSharp {
-                  sizes(maxWidth: 100) {
-                    ...GatsbyImageSharpSizes
+                  sizes(maxWidth: 100, traceSVG: { color: "#0397a7" }) {
+                    ...GatsbyImageSharpSizes_withWebp_tracedSVG
                   }
                 }
               }

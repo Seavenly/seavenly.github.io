@@ -11,6 +11,22 @@ export const Markdown = styled.div`
   }
 `;
 
+export const SectionTitle = styled.h2`
+  font-family: ${({ theme }) => theme.fonts.main};
+  color: ${({ theme }) => theme.colors.secondary};
+  margin-top: 4rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eee;
+  @media (min-width: 60rem) {
+    margin-top: 8rem;
+  }
+`;
+
 export default {
   Markdown,
+  SectionTitle,
 };

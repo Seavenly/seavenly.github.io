@@ -130,24 +130,37 @@ const NavLink = styled(Link)`
     display: flex;
     align-items: center;
     &:hover {
-      background: #555;
+      &::before {
+        opacity: 0.15;
+      }
       &::after {
         transition: all 0.3s;
-        margin-left: 0;
-        width: 100%;
+        transform: scaleX(0.8);
       }
+    }
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      opacity: 0;
+      transition: all 0.3s;
     }
     &::after {
       content: '';
       display: block;
       position: absolute;
-      bottom: 0;
+      bottom: 0.4rem;
       left: 0;
-      width: 0;
-      margin-left: 50%;
+      transform: scaleX(0);
       height: 0.1rem;
       background: white;
       z-index: 1;
+      width: 100%;
     }
   }
 `;
