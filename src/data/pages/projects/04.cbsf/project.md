@@ -1,6 +1,8 @@
 ---
-title: Cheasapeake Bay Sport Fishing
-thumb: master.jpg
+title: Chesapeake Bay Sport Fishing
+thumb: 
+    image: master.jpg
+    alt: Screenshot of Chesapeake Bay Sport Fishing website home page
 
 project:
     info: 

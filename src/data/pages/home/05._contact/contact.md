@@ -1,5 +1,7 @@
 ---
 title: Contact Me
 menu: contact
-thumb: keyboard.jpg
+thumb: 
+  image: keyboard.jpg
+  alt: Top view of angled white keyboard with thin rounded corner keys
 ---

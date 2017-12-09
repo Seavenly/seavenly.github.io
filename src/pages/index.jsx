@@ -45,10 +45,12 @@ export const query = graphql`
             title
             menu
             thumb {
-              name
-              childImageSharp {
-                resolutions(width: 150, height: 150, traceSVG: { color: "#0397a7" }) {
-                  ...GatsbyImageSharpResolutions_withWebp_tracedSVG
+              alt
+              image {
+                childImageSharp {
+                  resolutions(width: 150, height: 150, traceSVG: { color: "#0397a7" }) {
+                    ...GatsbyImageSharpResolutions_withWebp_tracedSVG
+                  }
                 }
               }
             }

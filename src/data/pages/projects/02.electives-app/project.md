@@ -1,6 +1,8 @@
 ---
 title: Middle School Electives
-thumb: master.jpg
+thumb: 
+  image: master.jpg
+  alt: Screenshot of a code editor with programming code
 
 project:
   info:

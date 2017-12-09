@@ -15,8 +15,8 @@ const Modular = ({ type, node, data }) => (
     <Heading>
       <ImageWrapper>
         <Image
-          resolutions={node.frontmatter.thumb.childImageSharp.resolutions}
-          alt={node.frontmatter.thumb.name.replace('-', ' ')}
+          resolutions={node.frontmatter.thumb.image.childImageSharp.resolutions}
+          alt={node.frontmatter.thumb.alt}
         />
       </ImageWrapper>
       <Title>{node.frontmatter.title}</Title>

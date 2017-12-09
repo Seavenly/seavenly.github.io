@@ -9,7 +9,7 @@ const Footer = () => (
     <SocialList>
       {Object.keys(social).map(key => (
         <SocialItem key={key}>
-          <SocialLink href={social[key]}>
+          <SocialLink href={social[key]} aria-label={`${key} account`}>
             <SVG icon={key} />
           </SocialLink>
         </SocialItem>

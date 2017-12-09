@@ -1,6 +1,8 @@
 ---
 title: St. Paul's Lutheran Church and School
-thumb: master.jpg
+thumb: 
+  image: master.jpg
+  alt: Screenshot of St. Paul's Lutheran Church and School website home page
 
 project:
   info:

@@ -1,7 +1,9 @@
 ---
 title: Tools
 menu: tools
-thumb: code.jpg
+thumb: 
+  image: code.jpg
+  alt: Screenshot of a code editor with programming code
 
 tools:
   - name: Webpack

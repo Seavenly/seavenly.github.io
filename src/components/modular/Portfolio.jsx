@@ -14,8 +14,8 @@ const Portfolio = ({ projects }) => (
           </TitleWrapper>
           <ImageWrapper>
             <Img
-              sizes={node.frontmatter.thumb.childImageSharp.sizes}
-              alt={`${node.frontmatter.title} project thumbnail`}
+              sizes={node.frontmatter.thumb.image.childImageSharp.sizes}
+              alt={node.frontmatter.thumb.alt}
             />
           </ImageWrapper>
         </ProjectLink>
@@ -47,9 +47,12 @@ export const query = graphql`
           frontmatter {
             title
             thumb {
-              childImageSharp {
-                sizes(maxWidth: 250, traceSVG: { color: "#0397a7" }) {
-                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
+              alt
+              image {
+                childImageSharp {
+                  sizes(maxWidth: 250, traceSVG: { color: "#0397a7" }) {
+                    ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                  }
                 }
               }
             }

@@ -1,7 +1,9 @@
 ---
 title: Skills
 menu: services
-thumb: toy-fighter.jpg
+thumb: 
+  image: toy-fighter.jpg
+  alt: A small toy action figure with a cyan karate outfit and red belt posed ready to fight
 
 services:
   - title: Front End Development
@@ -32,4 +34,6 @@ services:
 
 ### Let me help you out there
 
-Let's get your website up and moving. Need a quick basic website? Done. Need something more robust with content publishing and management? Done. Need custom functionality or a custom application? Done. Let's talk and see what can be done about your web presence needs.
+Let's get your website up and moving. Need a quick basic website? Done. Need something more robust
+with content publishing and management? Done. Need custom functionality or a custom application?
+Done. Let's talk and see what can be done about your web presence needs.

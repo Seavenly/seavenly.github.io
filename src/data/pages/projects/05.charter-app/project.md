@@ -1,6 +1,8 @@
 ---
 title: Fishing Charter Booking App
-thumb: master.jpg
+thumb: 
+  image: master.jpg
+  alt: Screenshot of the fishing charter booking app interface
 
 project:
   info:
