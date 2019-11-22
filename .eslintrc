@@ -12,6 +12,7 @@
     "browser": true
   },
   "globals": {
-    "graphql": true
+    "graphql": true,
+    "grecaptcha": true
   }
 }

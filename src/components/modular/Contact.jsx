@@ -43,46 +43,51 @@ class Contact extends React.Component {
         showFormResult: true,
         formResult: <SVG icon="loading" />,
       }));
-      axios({
-        method: 'post',
-        url: '/',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        data: encode({
-          'form-name': 'contact',
-          name: this.state.name,
-          email: this.state.email,
-          message: this.state.message,
-        }),
-      })
-        .then(() => {
-          this.setState(() => ({
-            formResult: "Thanks for contacting me. I'll get back to you shortly.",
-            name: '',
-            email: '',
-            message: '',
-          }));
-        })
-        .catch(() => {
-          this.setState(() => ({
-            formResult: 'Woops. Looks like there was an error. Please try again.',
-          }));
-          setTimeout(
-            () =>
+      grecaptcha.ready(() => {
+        grecaptcha.execute('{{ SITE_RECAPTCHA_KEY }}', { action: 'homepage' }).then(token => {
+          axios({
+            method: 'post',
+            url: '/',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            data: encode({
+              'g-recaptcha-response': token,
+              'form-name': 'contact',
+              name: this.state.name,
+              email: this.state.email,
+              message: this.state.message,
+            }),
+          })
+            .then(() => {
               this.setState(() => ({
-                showFormResult: false,
-              })),
-            4000,
-          );
-          setTimeout(
-            () =>
+                formResult: "Thanks for contacting me. I'll get back to you shortly.",
+                name: '',
+                email: '',
+                message: '',
+              }));
+            })
+            .catch(() => {
               this.setState(() => ({
-                formResult: '',
-              })),
-            4500,
-          );
+                formResult: 'Woops. Looks like there was an error. Please try again.',
+              }));
+              setTimeout(
+                () =>
+                  this.setState(() => ({
+                    showFormResult: false,
+                  })),
+                4000,
+              );
+              setTimeout(
+                () =>
+                  this.setState(() => ({
+                    formResult: '',
+                  })),
+                4500,
+              );
+            });
         });
+      });
     }
   }
 
@@ -149,7 +154,6 @@ class Contact extends React.Component {
             </label>
           </FormField>
           <Buttons>
-            <div data-netlify-recaptcha="true" />
             <Button type="reset" onClick={this.handleClear}>
               Clear
             </Button>

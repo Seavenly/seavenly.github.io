@@ -20,7 +20,9 @@
     "react-helmet": "^5.2.0",
     "styled-components": "^2.2.4"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
