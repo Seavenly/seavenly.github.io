@@ -95,6 +95,7 @@ class Contact extends React.Component {
           onSubmit={this.handleSubmit}
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
         >
           <input
             name="bot-field"
@@ -148,6 +149,7 @@ class Contact extends React.Component {
             </label>
           </FormField>
           <Buttons>
+            <div data-netlify-recaptcha="true" />
             <Button type="reset" onClick={this.handleClear}>
               Clear
             </Button>
