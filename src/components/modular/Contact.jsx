@@ -44,7 +44,7 @@ class Contact extends React.Component {
         formResult: <SVG icon="loading" />,
       }));
       grecaptcha.ready(() => {
-        grecaptcha.execute('{{ SITE_RECAPTCHA_KEY }}', { action: 'homepage' }).then(token => {
+        grecaptcha.execute(window.GRECAPTCHA_KEY, { action: 'homepage' }).then(token => {
           axios({
             method: 'post',
             url: '/',
